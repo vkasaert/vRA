@@ -1,21 +1,17 @@
+formatVersion: 1
 name: Test
 version: 1
-inputs:
-  disks:
-    type: array
-    minItems: 0
-    maxItems: 12
-    items:
-      type: object
-      properties:
-        size:
-          type: integer
-          title: Size (GB)
-          minSize: 1
-          maxSize: 2048
+inputs: {}
 resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: ''
+      cpuCount: 1
+      totalMemoryMB: 1024
+      attachedDisks:
+        - source: ${resource.Cloud_vSphere_Disk_1.id}
   Cloud_vSphere_Disk_1:
     type: Cloud.vSphere.Disk
     properties:
-      capacityGb: '${input.disks[count.index].size}'
-      count: '${length(input.disks)}'
+      capacityGb: 1
