@@ -1,3 +1,5 @@
+name: Test
+version: 1
 inputs:
   disks:
     type: array
