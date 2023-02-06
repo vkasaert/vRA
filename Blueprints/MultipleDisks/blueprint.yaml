@@ -1,0 +1,973 @@
+formatVersion: 1
+name: Test1
+version: 1
+formatVersion: 1
+inputs:
+  DisasterRecovery:
+    type: string
+    default: 'No'
+  disks:
+    type: array
+    title: Extra Disks
+    minItems: 1
+    maxItems: 6
+    items:
+      type: object
+      properties:
+        size:
+          type: integer
+          title: Size in GB
+          default: 0
+  datacenter:
+    type: string
+    enum:
+      - KA
+      - WI
+  os:
+    type: string
+    enum:
+      - WINDOWS
+      - LINUX
+  network:
+    type: string
+  image:
+    type: string
+    enum:
+      - WIN2KFX64
+      - WIN2K19X64
+      - RHEL 7 64bit
+      - RHEL 8 64bit
+  customer:
+    type: string
+    enum:
+      - BFS
+      - BEI
+  backup:
+    type: boolean
+    title: backup
+    default: true
+  hostname:
+    type: string
+  cpu:
+    type: number
+    default: 1
+  memoryMB:
+    type: number
+    default: 4096
+  com_ibm_icd_wo_ticketspec_ITDCUSTOMERNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCSCINUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_classstructure_CLASSIFICATIONID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_MILESTONE:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_jobtask_CALCAPPLYTO:
+    type: string
+    default: empty
+  com_ibm_icd_wo_TASKID:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDSITE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDPHYSERVERTYPE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_PARENT:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_SLAEXCLUDED:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_classstructure_SHOWINIA:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDENVIRONMENT:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDISMANAGED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDASCINUMOLD:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENSECURITYZONEMANUAL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_rowstamp:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDHOSTNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCSCINUMLIN:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDTYPE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_LMS:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDSERVERMODEL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_classstructure_CLASSSTRUCTUREID:
+    type: string
+    default: empty
+  com_ibm_icd_environment:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDLEVEL0FILTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_PLUSCJPREVNUM:
+    type: number
+    default: 0
+  com_ibm_icd_wo_jobtask_ORGID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_STATUS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDMEMORY:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSECZONE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSERIALNUMBER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSTORAGEHA:
+    type: string
+    default: empty
+  com_ibm_icd_wo_PLUSPCUSTOMER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSTGTIER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_FLAGMAJORCHANGE:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDPOSIXGROUPOWNERYN:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDPOSIXGROUPOWNER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENIAMCAACCT:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM01NAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM01SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDFSUSER01PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFSGROUP01PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM02NAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM02SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDFSUSER02PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFSGROUP02PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM03NAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM03SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDFSUSER03PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFSGROUP03PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM04NAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM04SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDFSUSER04PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFSGROUP04PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM05NAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESYSTEM05SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDFSUSER05PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFSGROUP05PERMISSIONS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_ITDREMRES:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDSECZONECINUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDOENUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_JPTASK:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDBUSAPPCODE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_rowstamp:
+    type: string
+    default: empty
+  com_ibm_icd_wo_CLASSSTRUCTUREID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_classstructure_ITDLASTMODIFIED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME2:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDPHYCPU:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSTGDRMIRROR:
+    type: string
+    default: empty
+  com_ibm_icd_wo_CHANGEDATE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDASSTAGING:
+    type: string
+    default: empty
+  com_ibm_icd_wo_OWNER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_AFFECTEDPERSON:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDPHYMEMORY:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_REPORTEDBY:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_CLASS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_PLUSPALLOWQUOTESERVICE:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_LOS:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDBUSAPPCINUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_CHANGEBY:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_PMCHGIATECHSUMEFF:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDCHGTYPE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_SLAEXCLUDED:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ2:
+    type: string
+    default: empty
+  com_ibm_icd_wo_WORKORDERID:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDSTORAGEACTION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENENVIRONMENTMANUAL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDVMUUID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_TICKETID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDBACKUP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDBUSAPP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_JPNUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCINUMSI:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_ITDLASTMODIFIED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ITDLASTMODIFIED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDOSVERSION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDPART1MOUNTPOINTCINUMV:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDLOCATIOND:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENENVIRONMENT:
+    type: string
+    default: empty
+  com_ibm_icd_wo_DJPAPPLIED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCUSTOMERCODE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDLEVEL1FILTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENHOSTNAMEMANUAL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_SITEID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_INCTASKSINSCHED:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_AMS:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDBUILDMANAGED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME2:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDADDOMAIN:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_JOBTASKID:
+    type: number
+    default: 0
+  com_ibm_icd_wo_sr_EXTERNALSYSTEM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCOMPUTERNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_WOCLASS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDLOCATION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ2:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDMACADDRESS_EP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCUSTOMER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFILMAPPRREQ:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFQDN_EP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_DESCRIPTION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_FLAGSECURITY:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME2:
+    type: string
+    default: empty
+  com_ibm_icd_wo_classstructure_rowstamp:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFQDN:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_CALCMETHOD:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSTACKID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDRPLACEMENTPRIO:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCINAMESI:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBUSAPP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_REPAIRLOCFLAG:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDDATACLASSIFICATION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_PLUSPALLOWQUOTEMATERIAL:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_AOS:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_CENBILLMAPPRREQ:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_rowstamp:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDOE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_classstructure_SHOW:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDIPADDRESS_EP:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBLMAPPRREQ:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_COMPUTERSYSTEM_OPERATIONALSTATUS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDEDRCLASS:
+    type: string
+    default: empty
+  com_ibm_icd_wo_sr_ITDINCREV:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDNUMVCPU:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ3:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ4:
+    type: string
+    default: empty
+  com_ibm_icd_wo_APPTREQUIRED:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_PLUSPALLOWQUOTELABOR:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_CENOSNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDLEVEL2FILTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCHGLITE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISKHA:
+    type: string
+    default: empty
+  com_ibm_icd_wo_WONUM:
+    type: string
+    default: empty
+  com_ibm_icd_wo_jobtask_APPTREQUIRED:
+    type: boolean
+    default: false
+  com_ibm_icd_wo_ticketspec_ITDREQUESTEDTIME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ1:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ2:
+    type: string
+    default: empty
+  com_ibm_server_fqdn:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENOSVERSION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCLIENTUSERID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENVLANID:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENPROJECTID:
+    type: string
+    default: empty
+  com_ibm_vra_request_ebs_phase1_status:
+    type: string
+    default: empty
+  com_ibm_vra_request_ebs_phase2_status:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBUSROLECODE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENPROJECTNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENSECZONEWIN:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENSECZONESQL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDCOSTCENTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSLA:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDATASTORECLUSTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDADORGUNITFINAL:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENIISREQ:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENBFFM:
+    type: string
+    default: empty
+  com_ibm_server_app:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDATA_DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDTLOG_DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDTEMPDB_DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISK00DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISK0SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDDISK01DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISK1SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDDISK02DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISK2SIZE:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDDISK03DRIVELETTER:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDISK3SIZE:
+    type: number
+    default: 0
+  VirtualMachine_Admin_EagerZero:
+    type: boolean
+    default: true
+  com_ibm_icd_wo_ticketspec_ITDADD_REPORTINGSERVICES:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDADD_INTEGRATIONSERVICES:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDASNAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDASTCPPORT:
+    type: number
+    default: 0
+  com_ibm_icd_wo_ticketspec_ITDASLICENSE:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSRVCOLLATION:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESTREAM_ENABLED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDFILESTREAM_SHARENAME:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_CENNETWORKFACING:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED:
+    type: string
+    default: empty
+  com_ibm_icd_wo_ticketspec_ITDDOMAIN:
+    type: string
+    default: empty
+  chef_os_type:
+    type: string
+    default: empty
+  chef_environment:
+    type: string
+    default: empty
+  chef_installClient:
+    type: boolean
+    default: true
+  chef_orgName:
+    type: string
+    default: empty
+  chef_runlist:
+    type: string
+    default: empty
+  chef_windows_installAsService:
+    type: string
+    default: empty
+  chef_windows_msiUrl:
+    type: string
+    default: empty
+resources:
+  Cloud_vSphere_Disk_1:
+    type: Cloud.vSphere.Disk
+    allocatePerInstance: true
+    properties:
+      count: ${length(input.disks)}
+      capacityGb: ${input.disks[count.index].size} #diskSize}
+      constraints:
+        - tag: 'pi2-storage:${(input.DisasterRecovery == "Yes") ? "replicated" : "non-replicated"}'
+  Cloud_vSphere_Network_1:
+    type: Cloud.vSphere.Network
+    properties:
+      networkType: existing
+      constraints:
+        #- tag: pi2-ntw:${to_lower(input.customer)}-${input.network}
+        - tag: pi2-ntw:${to_lower(input.customer)}-${input.network}${(input.com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED == 'N') ? (input.os == "WINDOWS") ? "-win":"-lin":""}
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      hostname: ${input.hostname}
+      image: '${(input.com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED == "N") ? input.image + "-DMZ" : input.image}'
+      #image: ${input.image}
+      cpuCount: ${input.cpu}
+      totalMemoryMB: ${(input.memoryMB)*1024}
+      customizationSpec: '${input.os == "WINDOWS" ? "windows-vra-tst-" + to_lower(input.com_ibm_icd_wo_ticketspec_ITDDOMAIN) : "linux-vra-tst." + to_lower(input.com_ibm_icd_wo_ticketspec_ITDDOMAIN)}'
+      tags:
+        - key: Backup Management (IBM Spectrum Protect)
+          value: '${(input.backup == true) ? "Included" : "Excluded"}'
+      storage:
+        constraints:
+          - tag: 'pi2-storage:${(input.DisasterRecovery == "Yes") ? "replicated" : "non-replicated"}'
+      constraints:
+        #- tag: pi2-location:${to_lower(input.os)}
+        - tag: pi2-location:${to_lower(input.os)}${(input.com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED == 'N') ? (input.com_ibm_icd_wo_ticketspec_CENNETWORKFACING == "DMZ T1") ? "-dmz-t1":"-dmz-t2":""}
+        - tag: pi2-cloud:${to_lower(input.customer)}-${to_lower(input.datacenter)}
+      networks:
+        - network: ${resource.Cloud_vSphere_Network_1.id}
+          assignment: static
+      attachedDisks: ${map_to_object(resource.Cloud_vSphere_Disk_1[*].id, "source")}
+      cloudConfigSettings:
+        phoneHomeShouldWait: false
+        phoneHomeFailOnTimeout: false
+        deploymentFailOnCloudConfigRuntimeError: false
+      ignoreActiveDirectory: '${(input.com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED == "Y") ? false : true}'
+      DisasterRecovery: ${input.DisasterRecovery}
+      com.ibm.icd.wo.ticketspec.ITDCUSTOMERNAME: ${input.com_ibm_icd_wo_ticketspec_ITDCUSTOMERNAME}
+      com.ibm.icd.wo.ticketspec.ITDCSCINUM: ${input.com_ibm_icd_wo_ticketspec_ITDCSCINUM}
+      com.ibm.icd.wo.classstructure.CLASSIFICATIONID: ${input.com_ibm_icd_wo_classstructure_CLASSIFICATIONID}
+      com.ibm.icd.wo.MILESTONE: ${input.com_ibm_icd_wo_MILESTONE}
+      com.ibm.icd.wo.jobtask.CALCAPPLYTO: ${input.com_ibm_icd_wo_jobtask_CALCAPPLYTO}
+      com.ibm.icd.wo.TASKID: ${input.com_ibm_icd_wo_TASKID}
+      com.ibm.icd.wo.ticketspec.ITDSITE: ${input.com_ibm_icd_wo_ticketspec_ITDSITE}
+      com.ibm.icd.wo.ticketspec.ITDPHYSERVERTYPE: ${input.com_ibm_icd_wo_ticketspec_ITDPHYSERVERTYPE}
+      com.ibm.icd.wo.PARENT: ${input.com_ibm_icd_wo_PARENT}
+      com.ibm.icd.wo.sr.SLAEXCLUDED: ${input.com_ibm_icd_wo_sr_SLAEXCLUDED}
+      com.ibm.icd.wo.classstructure.SHOWINIA: ${input.com_ibm_icd_wo_classstructure_SHOWINIA}
+      com.ibm.icd.wo.ticketspec.ITDENVIRONMENT: ${input.com_ibm_icd_wo_ticketspec_ITDENVIRONMENT}
+      com.ibm.icd.wo.ticketspec.ITDISMANAGED: ${input.com_ibm_icd_wo_ticketspec_ITDISMANAGED}
+      com.ibm.icd.wo.ticketspec.ITDASCINUMOLD: ${input.com_ibm_icd_wo_ticketspec_ITDASCINUMOLD}
+      com.ibm.icd.wo.ticketspec.CENSECURITYZONEMANUAL: ${input.com_ibm_icd_wo_ticketspec_CENSECURITYZONEMANUAL}
+      com.ibm.icd.wo.rowstamp: ${input.com_ibm_icd_wo_rowstamp}
+      com.ibm.icd.wo.ticketspec.ITDHOSTNAME: ${input.com_ibm_icd_wo_ticketspec_ITDHOSTNAME}
+      com.ibm.icd.wo.ticketspec.ITDCSCINUMLIN: ${input.com_ibm_icd_wo_ticketspec_ITDCSCINUMLIN}
+      com.ibm.icd.wo.ticketspec.ITDTYPE: ${input.com_ibm_icd_wo_ticketspec_ITDTYPE}
+      com.ibm.icd.wo.LMS: ${input.com_ibm_icd_wo_LMS}
+      com.ibm.icd.wo.ticketspec.ITDSERVERMODEL: ${input.com_ibm_icd_wo_ticketspec_ITDSERVERMODEL}
+      com.ibm.icd.wo.classstructure.CLASSSTRUCTUREID: ${input.com_ibm_icd_wo_classstructure_CLASSSTRUCTUREID}
+      com.ibm.icd.environment: ${input.com_ibm_icd_environment}
+      com.ibm.icd.wo.ticketspec.ITDLEVEL0FILTER: ${input.com_ibm_icd_wo_ticketspec_ITDLEVEL0FILTER}
+      com.ibm.icd.wo.jobtask.PLUSCJPREVNUM: ${input.com_ibm_icd_wo_jobtask_PLUSCJPREVNUM}
+      com.ibm.icd.wo.jobtask.ORGID: ${input.com_ibm_icd_wo_jobtask_ORGID}
+      com.ibm.icd.wo.STATUS: ${input.com_ibm_icd_wo_STATUS}
+      com.ibm.icd.wo.ticketspec.ITDMEMORY: ${input.com_ibm_icd_wo_ticketspec_ITDMEMORY}
+      com.ibm.icd.wo.ticketspec.ITDSECZONE: ${input.com_ibm_icd_wo_ticketspec_ITDSECZONE}
+      com.ibm.icd.wo.ticketspec.ITDSERIALNUMBER: ${input.com_ibm_icd_wo_ticketspec_ITDSERIALNUMBER}
+      com.ibm.icd.wo.ticketspec.ITDSTORAGEHA: ${input.com_ibm_icd_wo_ticketspec_ITDSTORAGEHA}
+      com.ibm.icd.wo.PLUSPCUSTOMER: ${input.com_ibm_icd_wo_PLUSPCUSTOMER}
+      com.ibm.icd.wo.FLAGMAJORCHANGE: ${input.com_ibm_icd_wo_FLAGMAJORCHANGE}
+      com.ibm.icd.wo.ticketspec.ITDSTGTIER: ${input.com_ibm_icd_wo_ticketspec_ITDSTGTIER}
+      com.ibm.icd.wo.ticketspec.ITDPOSIXGROUPOWNERYN: ${input.com_ibm_icd_wo_ticketspec_ITDPOSIXGROUPOWNERYN}
+      com.ibm.icd.wo.ticketspec.ITDPOSIXGROUPOWNER: ${input.com_ibm_icd_wo_ticketspec_ITDPOSIXGROUPOWNER}
+      com.ibm.icd.wo.ticketspec.CENIAMCAACCT: ${input.com_ibm_icd_wo_ticketspec_CENIAMCAACCT}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM01NAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM01NAME}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM01SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM01SIZE}
+      com.ibm.icd.wo.ticketspec.ITDFSUSER01PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSUSER01PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFSGROUP01PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSGROUP01PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM02NAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM02NAME}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM02SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM02SIZE}
+      com.ibm.icd.wo.ticketspec.ITDFSUSER02PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSUSER02PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFSGROUP02PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSGROUP02PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM03NAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM03NAME}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM03SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM03SIZE}
+      com.ibm.icd.wo.ticketspec.ITDFSUSER03PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSUSER03PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFSGROUP03PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSGROUP03PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM04NAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM04NAME}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM04SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM04SIZE}
+      com.ibm.icd.wo.ticketspec.ITDFSUSER04PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSUSER04PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFSGROUP04PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSGROUP04PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM05NAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM05NAME}
+      com.ibm.icd.wo.ticketspec.ITDFILESYSTEM05SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDFILESYSTEM05SIZE}
+      com.ibm.icd.wo.ticketspec.ITDFSUSER05PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSUSER05PERMISSIONS}
+      com.ibm.icd.wo.ticketspec.ITDFSGROUP05PERMISSIONS: ${input.com_ibm_icd_wo_ticketspec_ITDFSGROUP05PERMISSIONS}
+      com.ibm.icd.wo.sr.ITDREMRES: ${input.com_ibm_icd_wo_sr_ITDREMRES}
+      com.ibm.icd.wo.ticketspec.ITDSECZONECINUM: ${input.com_ibm_icd_wo_ticketspec_ITDSECZONECINUM}
+      com.ibm.icd.wo.ticketspec.ITDOENUM: ${input.com_ibm_icd_wo_ticketspec_ITDOENUM}
+      com.ibm.icd.wo.jobtask.JPTASK: ${input.com_ibm_icd_wo_jobtask_JPTASK}
+      com.ibm.icd.wo.ticketspec.ITDBUSAPPCODE: ${input.com_ibm_icd_wo_ticketspec_ITDBUSAPPCODE}
+      com.ibm.icd.wo.jobtask.rowstamp: ${input.com_ibm_icd_wo_jobtask_rowstamp}
+      com.ibm.icd.wo.CLASSSTRUCTUREID: ${input.com_ibm_icd_wo_CLASSSTRUCTUREID}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRGRPNAME3: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME3}
+      com.ibm.icd.wo.classstructure.ITDLASTMODIFIED: ${input.com_ibm_icd_wo_classstructure_ITDLASTMODIFIED}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRGRPNAME2: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME2}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRGRPNAME1: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME1}
+      com.ibm.icd.wo.ticketspec.ITDPHYCPU: ${input.com_ibm_icd_wo_ticketspec_ITDPHYCPU}
+      com.ibm.icd.wo.ticketspec.ITDSTGDRMIRROR: ${input.com_ibm_icd_wo_ticketspec_ITDSTGDRMIRROR}
+      com.ibm.icd.wo.CHANGEDATE: ${input.com_ibm_icd_wo_CHANGEDATE}
+      com.ibm.icd.wo.ticketspec.ITDASSTAGING: ${input.com_ibm_icd_wo_ticketspec_ITDASSTAGING}
+      com.ibm.icd.wo.OWNER: ${input.com_ibm_icd_wo_OWNER}
+      com.ibm.icd.wo.sr.AFFECTEDPERSON: ${input.com_ibm_icd_wo_sr_AFFECTEDPERSON}
+      com.ibm.icd.wo.ticketspec.ITDPHYMEMORY: ${input.com_ibm_icd_wo_ticketspec_ITDPHYMEMORY}
+      com.ibm.icd.wo.sr.REPORTEDBY: ${input.com_ibm_icd_wo_sr_REPORTEDBY}
+      com.ibm.icd.wo.sr.CLASS: ${input.com_ibm_icd_wo_sr_CLASS}
+      com.ibm.icd.wo.PLUSPALLOWQUOTESERVICE: ${input.com_ibm_icd_wo_PLUSPALLOWQUOTESERVICE}
+      com.ibm.icd.wo.LOS: ${input.com_ibm_icd_wo_LOS}
+      com.ibm.icd.wo.ticketspec.ITDBUSAPPCINUM: ${input.com_ibm_icd_wo_ticketspec_ITDBUSAPPCINUM}
+      com.ibm.icd.wo.CHANGEBY: ${input.com_ibm_icd_wo_CHANGEBY}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRREQ1: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ1}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRREQ4: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ4}
+      com.ibm.icd.wo.PMCHGIATECHSUMEFF: ${input.com_ibm_icd_wo_PMCHGIATECHSUMEFF}
+      com.ibm.icd.wo.ticketspec.ITDCHGTYPE: ${input.com_ibm_icd_wo_ticketspec_ITDCHGTYPE}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRREQ3: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ3}
+      com.ibm.icd.wo.SLAEXCLUDED: ${input.com_ibm_icd_wo_SLAEXCLUDED}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRREQ2: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRREQ2}
+      com.ibm.icd.wo.WORKORDERID: ${input.com_ibm_icd_wo_WORKORDERID}
+      com.ibm.icd.wo.ticketspec.ITDSZ_ISTRUSTED: ${input.com_ibm_icd_wo_ticketspec_ITDSZ_ISTRUSTED}
+      com.ibm.icd.wo.ticketspec.ITDSTORAGEACTION: ${input.com_ibm_icd_wo_ticketspec_ITDSTORAGEACTION}
+      com.ibm.icd.wo.ticketspec.CENENVIRONMENTMANUAL: ${input.com_ibm_icd_wo_ticketspec_CENENVIRONMENTMANUAL}
+      com.ibm.icd.wo.ticketspec.ITDVMUUID: ${input.com_ibm_icd_wo_ticketspec_ITDVMUUID}
+      com.ibm.icd.wo.sr.TICKETID: ${input.com_ibm_icd_wo_sr_TICKETID}
+      com.ibm.icd.wo.ticketspec.ITDBACKUP: ${input.com_ibm_icd_wo_ticketspec_ITDBACKUP}
+      com.ibm.icd.wo.ticketspec.ITDBUSAPP: ${input.com_ibm_icd_wo_ticketspec_ITDBUSAPP}
+      com.ibm.icd.wo.jobtask.JPNUM: ${input.com_ibm_icd_wo_jobtask_JPNUM}
+      com.ibm.icd.wo.ticketspec.ITDCINUMSI: ${input.com_ibm_icd_wo_ticketspec_ITDCINUMSI}
+      com.ibm.icd.wo.sr.ITDLASTMODIFIED: ${input.com_ibm_icd_wo_sr_ITDLASTMODIFIED}
+      com.ibm.icd.wo.ITDLASTMODIFIED: ${input.com_ibm_icd_wo_ITDLASTMODIFIED}
+      com.ibm.icd.wo.ticketspec.ITDOSVERSION: ${input.com_ibm_icd_wo_ticketspec_ITDOSVERSION}
+      com.ibm.icd.wo.ticketspec.ITDPART1MOUNTPOINTCINUMV: ${input.com_ibm_icd_wo_ticketspec_ITDPART1MOUNTPOINTCINUMV}
+      com.ibm.icd.wo.ticketspec.ITDLOCATIOND: ${input.com_ibm_icd_wo_ticketspec_ITDLOCATIOND}
+      com.ibm.icd.wo.ticketspec.CENENVIRONMENT: ${input.com_ibm_icd_wo_ticketspec_CENENVIRONMENT}
+      com.ibm.icd.wo.DJPAPPLIED: ${input.com_ibm_icd_wo_DJPAPPLIED}
+      com.ibm.icd.wo.ticketspec.ITDCUSTOMERCODE: ${input.com_ibm_icd_wo_ticketspec_ITDCUSTOMERCODE}
+      com.ibm.icd.wo.ticketspec.ITDLEVEL1FILTER: ${input.com_ibm_icd_wo_ticketspec_ITDLEVEL1FILTER}
+      com.ibm.icd.wo.ticketspec.CENHOSTNAMEMANUAL: ${input.com_ibm_icd_wo_ticketspec_CENHOSTNAMEMANUAL}
+      com.ibm.icd.wo.SITEID: ${input.com_ibm_icd_wo_SITEID}
+      com.ibm.icd.wo.jobtask.INCTASKSINSCHED: ${input.com_ibm_icd_wo_jobtask_INCTASKSINSCHED}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRGRPNAME4: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME4}
+      com.ibm.icd.wo.AMS: ${input.com_ibm_icd_wo_AMS}
+      com.ibm.icd.wo.ticketspec.ITDBUILDMANAGED: ${input.com_ibm_icd_wo_ticketspec_ITDBUILDMANAGED}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRGRPNAME3: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME3}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRGRPNAME2: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME2}
+      com.ibm.icd.wo.ticketspec.ITDADDOMAIN: ${input.com_ibm_icd_wo_ticketspec_ITDADDOMAIN}
+      com.ibm.icd.wo.ticketspec.ITDDOMAIN: ${input.com_ibm_icd_wo_ticketspec_ITDDOMAIN}
+      com.ibm.icd.wo.ticketspec.CENBFIBUSAPPRGRPNAME1: ${input.com_ibm_icd_wo_ticketspec_CENBFIBUSAPPRGRPNAME1}
+      com.ibm.icd.wo.jobtask.JOBTASKID: ${input.com_ibm_icd_wo_jobtask_JOBTASKID}
+      com.ibm.icd.wo.sr.EXTERNALSYSTEM: ${input.com_ibm_icd_wo_sr_EXTERNALSYSTEM}
+      com.ibm.icd.wo.ticketspec.ITDCOMPUTERNAME: ${input.com_ibm_icd_wo_ticketspec_ITDCOMPUTERNAME}
+      com.ibm.icd.wo.WOCLASS: ${input.com_ibm_icd_wo_WOCLASS}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRREQ1: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ1}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRGRPNAME4: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRGRPNAME4}
+      com.ibm.icd.wo.ticketspec.ITDLOCATION: ${input.com_ibm_icd_wo_ticketspec_ITDLOCATION}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRREQ3: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ3}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRREQ2: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ2}
+      com.ibm.icd.wo.ticketspec.CENBILBUSAPPRREQ4: ${input.com_ibm_icd_wo_ticketspec_CENBILBUSAPPRREQ4}
+      com.ibm.icd.wo.ticketspec.ITDMACADDRESS_EP: ${input.com_ibm_icd_wo_ticketspec_ITDMACADDRESS_EP}
+      com.ibm.icd.wo.ticketspec.ITDCUSTOMER: ${input.com_ibm_icd_wo_ticketspec_ITDCUSTOMER}
+      com.ibm.icd.wo.ticketspec.CENBFILMAPPRREQ: ${input.com_ibm_icd_wo_ticketspec_CENBFILMAPPRREQ}
+      com.ibm.icd.wo.ticketspec.ITDFQDN_EP: ${input.com_ibm_icd_wo_ticketspec_ITDFQDN_EP}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRGRPNAME3: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME3}
+      com.ibm.icd.wo.jobtask.DESCRIPTION: ${input.com_ibm_icd_wo_jobtask_DESCRIPTION}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRGRPNAME4: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME4}
+      com.ibm.icd.wo.FLAGSECURITY: ${input.com_ibm_icd_wo_FLAGSECURITY}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRGRPNAME1: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME1}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRGRPNAME2: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRGRPNAME2}
+      com.ibm.icd.wo.classstructure.rowstamp: ${input.com_ibm_icd_wo_classstructure_rowstamp}
+      com.ibm.icd.wo.ticketspec.ITDFQDN: ${input.com_ibm_icd_wo_ticketspec_ITDFQDN}
+      com.ibm.icd.wo.jobtask.CALCMETHOD: ${input.com_ibm_icd_wo_jobtask_CALCMETHOD}
+      com.ibm.icd.wo.ticketspec.ITDSTACKID: ${input.com_ibm_icd_wo_ticketspec_ITDSTACKID}
+      com.ibm.icd.wo.ticketspec.ITDDRPLACEMENTPRIO: ${input.com_ibm_icd_wo_ticketspec_ITDDRPLACEMENTPRIO}
+      com.ibm.icd.wo.ticketspec.ITDCINAMESI: ${input.com_ibm_icd_wo_ticketspec_ITDCINAMESI}
+      com.ibm.icd.wo.ticketspec.CENBUSAPP: ${input.com_ibm_icd_wo_ticketspec_CENBUSAPP}
+      com.ibm.icd.wo.REPAIRLOCFLAG: ${input.com_ibm_icd_wo_REPAIRLOCFLAG}
+      com.ibm.icd.wo.ticketspec.ITDDATACLASSIFICATION: ${input.com_ibm_icd_wo_ticketspec_ITDDATACLASSIFICATION}
+      com.ibm.icd.wo.PLUSPALLOWQUOTEMATERIAL: ${input.com_ibm_icd_wo_PLUSPALLOWQUOTEMATERIAL}
+      com.ibm.icd.wo.AOS: ${input.com_ibm_icd_wo_AOS}
+      com.ibm.icd.wo.ticketspec.CENBILLMAPPRREQ: ${input.com_ibm_icd_wo_ticketspec_CENBILLMAPPRREQ}
+      com.ibm.icd.wo.sr.rowstamp: ${input.com_ibm_icd_wo_sr_rowstamp}
+      com.ibm.icd.wo.ticketspec.ITDOE: ${input.com_ibm_icd_wo_ticketspec_ITDOE}
+      com.ibm.icd.wo.classstructure.SHOW: ${input.com_ibm_icd_wo_classstructure_SHOW}
+      com.ibm.icd.wo.ticketspec.ITDIPADDRESS_EP: ${input.com_ibm_icd_wo_ticketspec_ITDIPADDRESS_EP}
+      com.ibm.icd.wo.ticketspec.CENBFBLMAPPRREQ: ${input.com_ibm_icd_wo_ticketspec_CENBFBLMAPPRREQ}
+      com.ibm.icd.wo.ticketspec.COMPUTERSYSTEM_OPERATIONALSTATUS: ${input.com_ibm_icd_wo_ticketspec_COMPUTERSYSTEM_OPERATIONALSTATUS}
+      com.ibm.icd.wo.ticketspec.ITDEDRCLASS: ${input.com_ibm_icd_wo_ticketspec_ITDEDRCLASS}
+      com.ibm.icd.wo.sr.ITDINCREV: ${input.com_ibm_icd_wo_sr_ITDINCREV}
+      com.ibm.icd.wo.ticketspec.ITDNUMVCPU: ${input.com_ibm_icd_wo_ticketspec_ITDNUMVCPU}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRREQ3: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ3}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRREQ4: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ4}
+      com.ibm.icd.wo.APPTREQUIRED: ${input.com_ibm_icd_wo_APPTREQUIRED}
+      com.ibm.icd.wo.PLUSPALLOWQUOTELABOR: ${input.com_ibm_icd_wo_PLUSPALLOWQUOTELABOR}
+      com.ibm.icd.wo.ticketspec.CENOSNAME: ${input.com_ibm_icd_wo_ticketspec_CENOSNAME}
+      com.ibm.icd.wo.ticketspec.ITDLEVEL2FILTER: ${input.com_ibm_icd_wo_ticketspec_ITDLEVEL2FILTER}
+      com.ibm.icd.wo.ticketspec.ITDCHGLITE: ${input.com_ibm_icd_wo_ticketspec_ITDCHGLITE}
+      com.ibm.icd.wo.ticketspec.ITDDISKHA: ${input.com_ibm_icd_wo_ticketspec_ITDDISKHA}
+      com.ibm.icd.wo.WONUM: ${input.com_ibm_icd_wo_WONUM}
+      com.ibm.icd.wo.jobtask.APPTREQUIRED: ${input.com_ibm_icd_wo_jobtask_APPTREQUIRED}
+      com.ibm.icd.wo.ticketspec.ITDREQUESTEDTIME: ${input.com_ibm_icd_wo_ticketspec_ITDREQUESTEDTIME}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRREQ1: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ1}
+      com.ibm.icd.wo.ticketspec.CENBFBBUSAPPRREQ2: ${input.com_ibm_icd_wo_ticketspec_CENBFBBUSAPPRREQ2}
+      com.ibm.server.fqdn: ${input.com_ibm_server_fqdn}
+      com.ibm.icd.wo.ticketspec.CENOSVERSION: ${input.com_ibm_icd_wo_ticketspec_CENOSVERSION}
+      com.ibm.icd.wo.ticketspec.ITDCLIENTUSERID: ${input.com_ibm_icd_wo_ticketspec_ITDCLIENTUSERID}
+      com.ibm.icd.wo.ticketspec.CENVLANID: ${input.com_ibm_icd_wo_ticketspec_CENVLANID}
+      com.ibm.icd.wo.ticketspec.CENPROJECTID: ${input.com_ibm_icd_wo_ticketspec_CENPROJECTID}
+      com.ibm.vra.request.ebs.phase1.status: ${input.com_ibm_vra_request_ebs_phase1_status}
+      com.ibm.vra.request.ebs.phase2.status: ${input.com_ibm_vra_request_ebs_phase2_status}
+      com.ibm.icd.wo.ticketspec.CENBUSROLECODE: ${input.com_ibm_icd_wo_ticketspec_CENBUSROLECODE}
+      com.ibm.icd.wo.ticketspec.CENPROJECTNAME: ${input.com_ibm_icd_wo_ticketspec_CENPROJECTNAME}
+      com.ibm.icd.wo.ticketspec.CENSECZONEWIN: ${input.com_ibm_icd_wo_ticketspec_CENSECZONEWIN}
+      com.ibm.icd.wo.ticketspec.CENSECZONESQL: ${input.com_ibm_icd_wo_ticketspec_CENSECZONESQL}
+      com.ibm.icd.wo.ticketspec.ITDCOSTCENTER: ${input.com_ibm_icd_wo_ticketspec_ITDCOSTCENTER}
+      com.ibm.icd.wo.ticketspec.ITDSLA: ${input.com_ibm_icd_wo_ticketspec_ITDSLA}
+      com.ibm.icd.wo.ticketspec.ITDDATASTORECLUSTER: ${input.com_ibm_icd_wo_ticketspec_ITDDATASTORECLUSTER}
+      com.ibm.icd.wo.ticketspec.ITDADORGUNITFINAL: ${input.com_ibm_icd_wo_ticketspec_ITDADORGUNITFINAL}
+      com.ibm.icd.wo.ticketspec.CENIISREQ: ${input.com_ibm_icd_wo_ticketspec_CENIISREQ}
+      com.ibm.icd.wo.ticketspec.CENBFFM: ${input.com_ibm_icd_wo_ticketspec_CENBFFM}
+      com.ibm.server.app: ${input.com_ibm_server_app}
+      com.ibm.icd.wo.ticketspec.ITDDATA_DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDDATA_DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDTLOG_DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDTLOG_DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDTEMPDB_DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDTEMPDB_DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDDISK00DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDDISK00DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDDISK0SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDDISK0SIZE}
+      com.ibm.icd.wo.ticketspec.ITDDISK01DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDDISK01DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDDISK1SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDDISK1SIZE}
+      com.ibm.icd.wo.ticketspec.ITDDISK02DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDDISK02DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDDISK2SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDDISK2SIZE}
+      com.ibm.icd.wo.ticketspec.ITDDISK03DRIVELETTER: ${input.com_ibm_icd_wo_ticketspec_ITDDISK03DRIVELETTER}
+      com.ibm.icd.wo.ticketspec.ITDDISK3SIZE: ${input.com_ibm_icd_wo_ticketspec_ITDDISK3SIZE}
+      VirtualMachine.Admin.EagerZero: ${input.VirtualMachine_Admin_EagerZero}
+      com.ibm.icd.wo.ticketspec.ITDADD_REPORTINGSERVICES: ${input.com_ibm_icd_wo_ticketspec_ITDADD_REPORTINGSERVICES}
+      com.ibm.icd.wo.ticketspec.ITDADD_INTEGRATIONSERVICES: ${input.com_ibm_icd_wo_ticketspec_ITDADD_INTEGRATIONSERVICES}
+      com.ibm.icd.wo.ticketspec.ITDASNAME: ${input.com_ibm_icd_wo_ticketspec_ITDASNAME}
+      com.ibm.icd.wo.ticketspec.ITDASTCPPORT: ${input.com_ibm_icd_wo_ticketspec_ITDASTCPPORT}
+      com.ibm.icd.wo.ticketspec.ITDASLICENSE: ${input.com_ibm_icd_wo_ticketspec_ITDASLICENSE}
+      com.ibm.icd.wo.ticketspec.ITDSRVCOLLATION: ${input.com_ibm_icd_wo_ticketspec_ITDSRVCOLLATION}
+      com.ibm.icd.wo.ticketspec.ITDFILESTREAM_ENABLED: ${input.com_ibm_icd_wo_ticketspec_ITDFILESTREAM_ENABLED}
+      com.ibm.icd.wo.ticketspec.ITDFILESTREAM_SHARENAME: ${input.com_ibm_icd_wo_ticketspec_ITDFILESTREAM_SHARENAME}
+      com.ibm.icd.wo.ticketspec.CENNETWORKFACING: ${com_ibm_icd_wo_ticketspec_CENNETWORKFACING}
+      chef.os.type: ${input.chef_os_type}
+      chef.environment: ${input.chef_environment}
+      chef.installClient: ${input.chef_installClient}
+      chef.orgName: ${input.chef_orgName}
+      chef.runlist: ${input.chef_runlist}
+      chef.windows.installAsService: ${input.chef_windows_installAsService}
+      chef.windows.msiUrl: ${input.chef_windows_msiUrl}
