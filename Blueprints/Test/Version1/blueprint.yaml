@@ -1,6 +1,5 @@
 formatVersion: 1
 name: Test
-version: 1
 inputs: {}
 resources:
   Cloud_vSphere_Machine_1:

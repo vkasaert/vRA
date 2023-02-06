@@ -1,6 +1,5 @@
 formatVersion: 1
 name: MultipleDisks
-version: 1
 inputs:
   DisasterRecovery:
     type: string
